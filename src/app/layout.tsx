@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Drawer from "@/components/Drawer";
 import Header from "@/components/Header";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { app, analytics } from '@/lib/firebase';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,10 @@ export default function RootLayout({
 
   const openDrawer = () => setIsDrawerOpen(true);
   const closeDrawer = () => setIsDrawerOpen(false);
+
+  useEffect(() => {
+    // You can initialize analytics or perform other Firebase-related tasks here
+  }, []);
 
   return (
     <html lang="en">
